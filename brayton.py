@@ -1,6 +1,5 @@
 #%%
 
-# Fixed this from the download
 #   Brayton cycle demo
 #   C.R. Martin (c) 2016-2018
 #   GPL v3.0
