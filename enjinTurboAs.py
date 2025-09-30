@@ -16,3 +16,31 @@ mdot = 8.1 # [kg/s]
 # mr^2 = 115kg * 3.3^2  = 1252kg.m^2
 # Met 5 lemme is dit 6261kg.m^2 traagheid.
 # Aerodinamiese sleurkrag van 2.5kN.m per lem.  Tot maksimum van 240opm.
+
+k = 1.4
+P1 = 0.1e6
+P2 = P1*7
+P3 = P2
+P4 = P1
+T1 = 273.2 + 15
+T3 = 273.2 + 900
+Cp = 1004 # [J/kg.K]
+mdot = 8.1 # [kg/s] massavloei in enjin
+print(P2/P1)
+# %%
+T2 = T1*(P2/P1)**((k-1)/k)
+wc = Cp*(T2 - T1) # [J/kg]
+Wc = wc*mdot # [W]
+print(f"Die kompressor werk is {Wc/1000:.1f}kW")
+# %%
+T4 = T3*(P4/P3)**((k-1)/k)
+wt = Cp*(T3 - T4) # [J/kg]
+Wt = wt*mdot # [W]
+print(f"Die turbine werk is {Wt/1000:.1f}kW")
+#%%
+print(f"Die netto werk word bereken as {(Wt-Wc)/1000:.1f}kW")
+print("Die maksimum uitset van die werklike turbine is 1640kW")
+# %%
+# Doen nou dieselfde berekening met doeltreffendheid van kompressor
+# en turbine aannames.
+# Dan 'n versnelling van die kompressor as en die las.
