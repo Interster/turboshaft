@@ -44,3 +44,9 @@ print("Die maksimum uitset van die werklike turbine is 1640kW")
 # Doen nou dieselfde berekening met doeltreffendheid van kompressor
 # en turbine aannames.
 # Dan 'n versnelling van die kompressor as en die las.
+
+NR = 240*2*3.14159/60 # 240 opm
+TR = 2.5*1000*5 # 2.5kN.m per rotor en 5 rotors
+PR = TR*NR
+print(f"Die drywing van hoofrotor is {(PR/1000):.1f}kW")
+# %%
